@@ -3,3 +3,4 @@ ibm_watson==5.2.2
 ibm_cloud_sdk_core==3.10.1
 Flask==2.0.1
 Flask_Cors==3.0.10
+gunicorn
