@@ -7,6 +7,8 @@ import json
 from ibm_watson import SpeechToTextV1
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 
+import os
+
 ##################### AUTH ##########################################
 apikey = 'rBzgSxh8n35Dlc7-hTC5UkzydJoXmgsEpfy7_apcGiDQ'
 url = 'https://api.eu-gb.speech-to-text.watson.cloud.ibm.com/instances/c2d65dda-b9cf-4270-97f8-0ac9c7af013a'
@@ -19,6 +21,7 @@ CORS(app)
 
 @app.route('/<path>')
 def speach_to_text(path):
+    path = os.path.join('./audio', path)
     authenticator = IAMAuthenticator(apikey)
     stt = SpeechToTextV1(authenticator=authenticator)
     stt.set_service_url(url)
@@ -31,8 +34,8 @@ def speach_to_text(path):
 def image_to_String(og_img_path,res_img_path, width = None, height = None, inter = cv2.INTER_AREA):
     width = int(width)
     height = int(height)
-    # og_img_path = "2.jpg"
-    # res_img_path = "2new.jpg"
+    og_img_path  = os.path.join('./images/original_images', og_img_path)
+    res_img_path = os.path.join('./images/resized_images', res_img_path)
     og_img = cv2.imread(og_img_path, 0)
     dim = None
     (h, w) = og_img.shape
