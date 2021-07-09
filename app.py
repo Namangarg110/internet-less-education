@@ -54,5 +54,5 @@ def image_to_String(og_img_path,res_img_path, width = None, height = None, inter
 
 
 if __name__ == "__main__":
-	app.run()
+	app.run(debug=True)
 
