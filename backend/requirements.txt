@@ -1,7 +1,5 @@
-matplotlib==3.4.2
-numpy==1.21.0
+opencv_contrib_python==4.5.2.54
+ibm_watson==5.2.2
+ibm_cloud_sdk_core==3.10.1
 Flask==2.0.1
-flask_cors==3.0.10
-imutils==0.5.4
-Pillow==8.3.1
-pytesseract==0.3.8
+Flask_Cors==3.0.10
