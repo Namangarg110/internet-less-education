@@ -2,7 +2,6 @@ import base64
 import cv2
 import flask
 from flask import Flask, request, render_template, redirect, url_for
-from flask_cors import CORS
 import json
 from ibm_watson import SpeechToTextV1
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
@@ -15,7 +14,6 @@ url = 'https://api.eu-gb.speech-to-text.watson.cloud.ibm.com/instances/c2d65dda-
 
 
 app = Flask(__name__)
-CORS(app)
 
 @app.route('/')
 def home():
