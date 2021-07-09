@@ -6,7 +6,6 @@ from flask_cors import CORS
 import json
 from ibm_watson import SpeechToTextV1
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
-
 import os
 
 ##################### AUTH ##########################################
@@ -51,7 +50,9 @@ def image_to_String(og_img_path,res_img_path, width = None, height = None, inter
     with open(res_img_path, "rb") as img_file:
         my_string = base64.b64encode(img_file.read())
     return my_string
+    
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+	app.run()
+
