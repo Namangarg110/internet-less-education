@@ -21,7 +21,7 @@ CORS(app)
 
 @app.route('/<path>')
 def speach_to_text(path):
-    path = os.path.join('./audio', path)
+    path = os.path.join('./sample_audio', path)
     authenticator = IAMAuthenticator(apikey)
     stt = SpeechToTextV1(authenticator=authenticator)
     stt.set_service_url(url)
