@@ -9,12 +9,12 @@ app = Flask(__name__)
 CORS(app)
 
 
-@app.route('/<width>/<height>')
-def image_to_String(width = None, height = None, inter = cv2.INTER_AREA):
+@app.route('/<og_img_path>/<res_img_path>/<width>/<height>')
+def image_to_String(og_img_path,res_img_path, width = None, height = None, inter = cv2.INTER_AREA):
     width = int(width)
     height = int(height)
-    og_img_path = "2.jpg"
-    res_img_path = "2new.jpg"
+    # og_img_path = "2.jpg"
+    # res_img_path = "2new.jpg"
     og_img = cv2.imread(og_img_path, 0)
     dim = None
     (h, w) = og_img.shape
